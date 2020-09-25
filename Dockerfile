@@ -17,6 +17,11 @@ RUN install2.r --error \
     tensorflow \
     keras
 
+# add locale
+RUN locale-gen pt_BR \
+  && locale-gen pt_BR.UTF-8 \
+  && update-locale
+
 ENV WORKON_HOME /opt/virtualenvs
 ENV PYTHON_VENV_PATH $WORKON_HOME/r-tensorflow
 
