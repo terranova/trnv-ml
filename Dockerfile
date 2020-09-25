@@ -4,6 +4,7 @@ FROM rocker/tidyverse
 RUN apt-get update -qq --allow-releaseinfo-change \
     && apt-get -y --no-install-recommends install \
         libpoppler-cpp-dev \
+        poppler-utils \
         libmagick++-dev
 
 RUN install2.r --error \
@@ -43,7 +44,6 @@ RUN ln -s ${PYTHON_VENV_PATH}/bin/pip /usr/local/bin/pip && \
     ln -s ${PYTHON_VENV_PATH}/bin/virtualenv /usr/local/bin/virtualenv
 
 RUN Rscript -e "keras::install_keras()"
-RUN pip install pdftotext
 
 ### CHANGE ONCE PR IS ACCEPTED
 RUN installGithub.r \
