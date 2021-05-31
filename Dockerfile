@@ -49,4 +49,5 @@ RUN Rscript -e "keras::install_keras()"
 RUN installGithub.r \
     abjur/abjutils \
     decryptr/decryptr \
+    terranova/montila \
     && rm -rf /tmp/downloaded_packages/
