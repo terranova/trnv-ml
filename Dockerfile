@@ -49,5 +49,4 @@ RUN Rscript -e "keras::install_keras()"
 ### CHANGE ONCE PR IS ACCEPTED
 RUN installGithub.r \
     decryptr/decryptr \
-    terranova/montila \
     && rm -rf /tmp/downloaded_packages/
