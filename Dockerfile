@@ -16,7 +16,8 @@ RUN install2.r --error \
     magick \
     fs \
     tensorflow \
-    keras
+    keras \
+    abjutils
 
 # add locale
 RUN locale-gen pt_BR \
@@ -47,7 +48,6 @@ RUN Rscript -e "keras::install_keras()"
 
 ### CHANGE ONCE PR IS ACCEPTED
 RUN installGithub.r \
-    abjur/abjutils \
     decryptr/decryptr \
     terranova/montila \
     && rm -rf /tmp/downloaded_packages/

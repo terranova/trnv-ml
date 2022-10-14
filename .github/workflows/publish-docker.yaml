@@ -2,15 +2,16 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 name: Publish Docker
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v4
       with:
         name: trnv/trnv-ml
         username: ${{ secrets.DOCKER_USERNAME }}
